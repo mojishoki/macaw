@@ -213,6 +213,9 @@ class PantsMappingClass(MappingClass):
 
     def __ne__(self, other):
         return not self.__eq__(other)
+    
+    def __hash__(self):
+        return hash(str(self.action_on_homology().astype('int')))
 
     # def nielsen_thurston_type(self):
     #     p = self._pants_decomposition
